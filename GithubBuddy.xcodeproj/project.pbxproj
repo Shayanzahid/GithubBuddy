@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40B99CD24365EC9007FA7AD /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B99CC24365EC9007FA7AD /* SearchVC.swift */; };
+		E40B99CF24365EF8007FA7AD /* FavouritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B99CE24365EF8007FA7AD /* FavouritesListVC.swift */; };
+		E40B99D1243A2A67007FA7AD /* GBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B99D0243A2A67007FA7AD /* GBButton.swift */; };
+		E40B99D3243A2F38007FA7AD /* GBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B99D2243A2F38007FA7AD /* GBTextField.swift */; };
+		E40B99D5243A377D007FA7AD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B99D4243A377D007FA7AD /* SearchView.swift */; };
 		E4E6C9302433DB2600A16644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6C92F2433DB2600A16644 /* AppDelegate.swift */; };
 		E4E6C9322433DB2600A16644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6C9312433DB2600A16644 /* SceneDelegate.swift */; };
-		E4E6C9342433DB2600A16644 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6C9332433DB2600A16644 /* ViewController.swift */; };
-		E4E6C9372433DB2600A16644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4E6C9352433DB2600A16644 /* Main.storyboard */; };
 		E4E6C9392433DB2A00A16644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4E6C9382433DB2A00A16644 /* Assets.xcassets */; };
 		E4E6C93C2433DB2A00A16644 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4E6C93A2433DB2A00A16644 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E40B99CC24365EC9007FA7AD /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		E40B99CE24365EF8007FA7AD /* FavouritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListVC.swift; sourceTree = "<group>"; };
+		E40B99D0243A2A67007FA7AD /* GBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBButton.swift; sourceTree = "<group>"; };
+		E40B99D2243A2F38007FA7AD /* GBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBTextField.swift; sourceTree = "<group>"; };
+		E40B99D4243A377D007FA7AD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		E4E6C92C2433DB2600A16644 /* GithubBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E6C92F2433DB2600A16644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4E6C9312433DB2600A16644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E4E6C9332433DB2600A16644 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E4E6C9362433DB2600A16644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4E6C9382433DB2A00A16644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4E6C93B2433DB2A00A16644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4E6C93D2433DB2A00A16644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,11 +64,14 @@
 			children = (
 				E4E6C92F2433DB2600A16644 /* AppDelegate.swift */,
 				E4E6C9312433DB2600A16644 /* SceneDelegate.swift */,
-				E4E6C9332433DB2600A16644 /* ViewController.swift */,
-				E4E6C9352433DB2600A16644 /* Main.storyboard */,
 				E4E6C9382433DB2A00A16644 /* Assets.xcassets */,
 				E4E6C93A2433DB2A00A16644 /* LaunchScreen.storyboard */,
 				E4E6C93D2433DB2A00A16644 /* Info.plist */,
+				E40B99CC24365EC9007FA7AD /* SearchVC.swift */,
+				E40B99CE24365EF8007FA7AD /* FavouritesListVC.swift */,
+				E40B99D0243A2A67007FA7AD /* GBButton.swift */,
+				E40B99D2243A2F38007FA7AD /* GBTextField.swift */,
+				E40B99D4243A377D007FA7AD /* SearchView.swift */,
 			);
 			path = GithubBuddy;
 			sourceTree = "<group>";
@@ -127,7 +136,6 @@
 			files = (
 				E4E6C93C2433DB2A00A16644 /* LaunchScreen.storyboard in Resources */,
 				E4E6C9392433DB2A00A16644 /* Assets.xcassets in Resources */,
-				E4E6C9372433DB2600A16644 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4E6C9342433DB2600A16644 /* ViewController.swift in Sources */,
+				E40B99D3243A2F38007FA7AD /* GBTextField.swift in Sources */,
+				E40B99D1243A2A67007FA7AD /* GBButton.swift in Sources */,
+				E40B99CD24365EC9007FA7AD /* SearchVC.swift in Sources */,
+				E40B99CF24365EF8007FA7AD /* FavouritesListVC.swift in Sources */,
+				E40B99D5243A377D007FA7AD /* SearchView.swift in Sources */,
 				E4E6C9302433DB2600A16644 /* AppDelegate.swift in Sources */,
 				E4E6C9322433DB2600A16644 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +159,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E4E6C9352433DB2600A16644 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4E6C9362433DB2600A16644 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4E6C93A2433DB2A00A16644 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
