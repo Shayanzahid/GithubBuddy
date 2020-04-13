@@ -37,13 +37,14 @@ class FollowersListVC: UIViewController {
     }
     
     private func getFollowers() {
-        networkManager.getFollowers(for: username, page: 1) { followers, error in
-            guard let followers = followers else {
-                self.presentGBAlert(title: "Bad stuff happened", message: error!.rawValue, buttonTitle: "Ok bro")
-                return
-            }
+        networkManager.getFollowers(for: username, page: 1) { result in
             
-            print(followers)
+            switch result {
+            case .success(let followers):
+                print(followers.count)
+            case .failure(let error):
+                self.presentGBAlert(title: "Bad stuff happened", message: error.rawValue, buttonTitle: "Ok bro")
+            }
         }
     }
 }
