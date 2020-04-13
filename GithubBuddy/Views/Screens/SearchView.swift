@@ -9,6 +9,16 @@
 import UIKit
 
 class SearchView: UIView {
+    var searchVC: SearchVC? {
+        didSet {
+            callToActionButton.addTarget(searchVC, action: #selector(SearchVC.searchTapped), for: .touchUpInside)
+        }
+    }
+    
+    var isUsernameEntered: Bool {
+        return !usernameTextField.text!.isEmpty
+    }
+    
     let logoImage = UIImageView()
     let usernameTextField = GBTextField()
     let callToActionButton = GBButton(backgroundColor: .systemGreen, title: "Get followers")
