@@ -21,7 +21,7 @@ class FollowersListView: UIView {
         super.layoutSubviews()
 
         collectionView.frame = bounds
-        collectionView.collectionViewLayout = threeColumnFlowLayout()
+        collectionView.collectionViewLayout = UIHelper.threeColumnFlowLayout(in: self)
     }
     
     override init(frame: CGRect) {
@@ -34,20 +34,6 @@ class FollowersListView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func threeColumnFlowLayout() -> UICollectionViewFlowLayout {
-        let width = bounds.width
-        let padding: CGFloat = 12
-        let minimumItemSpacing: CGFloat = 10
-        let availableWidth = width - (padding * 2) - (minimumItemSpacing * 2)
-        let itemWidth = availableWidth / 3
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth + 40)
-        
-        return flowLayout
     }
     
     private func setupCollectionView() {

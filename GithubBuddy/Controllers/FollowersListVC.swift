@@ -16,10 +16,10 @@ class FollowersListVC: UIViewController {
     
     private let followersListView = FollowersListView()
     
-    private let networkManager = NetworkManager.shared
-    
     var username: String!
     var followers = [Follower]()
+    var page = 1
+    var hasMoreFollowers = true
     
     var datasource: UICollectionViewDiffableDataSource<Section, Follower>!
     
@@ -40,16 +40,20 @@ class FollowersListVC: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        getFollowers()
+        followersListView.collectionView.delegate = self
+        
+        getFollowers(for: username, page: page)
         configureDataSource()
     }
     
-    func getFollowers() {
-        networkManager.getFollowers(for: username, page: 1) { result in
+    func getFollowers(for username: String, page: Int) {
+        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
+            guard let self = self else { return }
             
             switch result {
             case .success(let followers):
-                self.followers = followers
+                self.hasMoreFollowers = followers.count < 100 ? false : true
+                self.followers.append(contentsOf: followers)
                 self.updateData()
             case .failure(let error):
                 self.presentGBAlert(title: "Bad stuff happened", message: error.rawValue, buttonTitle: "Ok bro")
@@ -71,5 +75,19 @@ class FollowersListVC: UIViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         datasource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+extension FollowersListVC: UICollectionViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            guard hasMoreFollowers else { return }
+            page += 1
+            getFollowers(for: username, page: page)
+        }
     }
 }
