@@ -18,7 +18,6 @@ class FollowersListVC: UIViewController {
     
     var username: String!
     var followers = [Follower]()
-    var filteredFollowers = [Follower]()
     var page = 1
     var hasMoreFollowers = true
     
@@ -103,6 +102,7 @@ class FollowersListVC: UIViewController {
 }
 
 extension FollowersListVC: UICollectionViewDelegate {
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -114,6 +114,14 @@ extension FollowersListVC: UICollectionViewDelegate {
             getFollowers(for: username, page: page)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let follower = datasource.itemIdentifier(for: indexPath) else { return }
+        let userInfoVC = UserInfoVC()
+        userInfoVC.follower = follower
+        let navigationController = UINavigationController(rootViewController: userInfoVC)
+        present(navigationController, animated: true)
+    }
 }
 
 extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
@@ -121,7 +129,7 @@ extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         
-        filteredFollowers = followers.filter {
+        let filteredFollowers = followers.filter {
             $0.login.lowercased().contains(filter.lowercased())
         }
         
